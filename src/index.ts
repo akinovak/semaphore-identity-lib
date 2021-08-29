@@ -21,7 +21,7 @@ const pedersenHash = (ints: bigint[]): bigint => {
     const p = circomlib.babyJub.unpackPoint(
         circomlib.pedersenHash.hash(
             Buffer.concat(
-                ints.map((x) => utils.leInt2Buff(x, 32))
+                ints.map((x) => Buffer.from(utils.leInt2Buff(x, 32)))
             )
         )
     )
