@@ -6,7 +6,7 @@ var circomlib = require('circomlib');
 var bigintConversion = require("bigint-conversion");
 var utils = require("ffjavascript").utils;
 var pedersenHash = function (ints) {
-    var p = circomlib.babyJub.unpackPoint(circomlib.pedersenHash.hash(Buffer.concat(ints.map(function (x) { return utils.leInt2Buff(x, 32); }))));
+    var p = circomlib.babyJub.unpackPoint(circomlib.pedersenHash.hash(Buffer.concat(ints.map(function (x) { return Buffer.from(utils.leInt2Buff(x, 32)); }))));
     return BigInt(p[0]);
 };
 var genRandomBuffer = function (numBytes) {
