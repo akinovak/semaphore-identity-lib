@@ -12,10 +12,8 @@ const newLibSerialized = newLib.serializeIdentity(identity);
 const libUnserialized = lib.unSerialiseIdentity(libSerialized);
 const newLibUnserialized = newLib.unSerializeIdentity(libSerialized);
 
-// expect()
-
-console.log(libIdCommitment === libIdCommitment);
-console.log(libSerialized === newLibSerialized)
+console.log(libIdCommitment === newLibIdCommitmnet);
+console.log(libSerialized === newLibSerialized);
 
 console.log(libUnserialized.identityNullifier == newLibUnserialized.identityNullifier)
 console.log(libUnserialized.identityTrapdoor == newLibUnserialized.identityTrapdoor)
